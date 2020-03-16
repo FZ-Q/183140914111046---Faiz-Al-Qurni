@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .Kal {
+            width: 400px;
+            height: 400px;
+            background-color: #4284F3;
+            border: solid black 2px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .BGInput {
+            width: 350px;
+            height: 20px;
+            background-color: #F9BB08;
+            margin: auto;
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .BGButton {
+            width: 400px;
+            height: 30px;
+            background-color: #33A852;
+        }
+
+        h1 {
+            color: #5F6368;
+        }
+
+        input[type=number]:focus {
+            border: 3px solid #E42A2B;
+        }
+
+        button {
+            background-color: #E42A2B;
+            border: none;
+            color: white;
+            padding: 5px 5px 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 10px;
+            margin: 2px 2px 2px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #E42A2B;
+        }
+
+        .button1:hover {
+            background-color: #E42A2B;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Kal">
+        <h1>Kalkulator Javascript</h1>
+        <div class="BGInput">
+            <input type="number" name="A1" id="I1">
+        </div>
+        <br>
+        <div class="BGInput">
+            <input type="number" name="A2" id="I2">
+        </div>
+        <br>
+        <div class="BGButton">
+            <button name="Tambah" class="button button1" onclick="Tambah()">Tambah</button>
+            <button name="Kurang" class="button button1" onclick="Kurang()">Kurang</button>
+            <button name="Kali" class="button button1" onclick="Kali()">Kali</button>
+            <button name="Bagi" class="button button1" onclick="Bagi()">Bagi</button>
+        </div>
+        <br>
+        <h1 id="Hasil"></h1>
+    </div>
+</body>
+
+<script>
+    function Tambah() {
+        var A1 = parseFloat(document.getElementById('I1').value);
+        var A2 = parseFloat(document.getElementById('I2').value);
+        var Total = A1 + A2;
+        document.getElementById("Hasil").innerHTML = Total;
+    }
+
+    function Kurang() {
+        var A1 = parseFloat(document.getElementById('I1').value);
+        var A2 = parseFloat(document.getElementById('I2').value);
+        var Total = A1 - A2;
+        document.getElementById("Hasil").innerHTML = Total;
+    }
+
+    function Kali() {
+        var A1 = parseFloat(document.getElementById('I1').value);
+        var A2 = parseFloat(document.getElementById('I2').value);
+        var Total = A1 * A2;
+        document.getElementById("Hasil").innerHTML = Total;
+    }
+
+    function Bagi() {
+        var A1 = parseFloat(document.getElementById('I1').value);
+        var A2 = parseFloat(document.getElementById('I2').value);
+        var Total = A1 / A2;
+        document.getElementById("Hasil").innerHTML = Total;
+    }
+</script>
+
+</html>

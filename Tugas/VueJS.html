@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" name="" id="" v-model='title'>
+        <br>
+        <br>
+        <textarea name="" id="" cols="30" rows="10" v-model="content">asd</textarea>
+        <h1> {{title}} </h1>
+        <p> {{content}}</p>
+        <hr>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <h1>Show Text</h1>
+    <div id="showText">
+        <textarea name="" id="" cols="30" rows="10" v-model="content"></textarea>
+        <h2>Plaint Text</h2>
+        <div v-text="content"></div>
+        <hr>
+        <h2>Html Text</h2>
+        <div v-html="content"></div>
+        <h2>Once Render</h2>
+        <div v-once>{{content}}</div>
+    </div>
+
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: "Ini Title",
+            content: "Ini Content"
+        }
+    })
+
+    var showText = new Vue({
+        el: '#showText',
+        data: {
+            content: '<b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima consectetur corporis doloribus natus hic dolores culpa, assumenda cum similique, consequuntur quas doloremque nemo itaque ducimus odit amet, quos cupiditate?</b>'
+        }
+    })
+
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [{
+                    text: 'Learn JavaScript'
+                },
+                {
+                    text: 'Learn Vue'
+                },
+                {
+                    text: 'Build something awesome'
+                }
+            ]
+        }
+    })
+</script>
+
+</html>
